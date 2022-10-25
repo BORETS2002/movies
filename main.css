@@ -1,0 +1,52 @@
+.body{
+  background: #000;
+}
+.mov{
+  margin-top: 105px;
+text-align: center;
+color: #ff0000;
+}
+.list{
+}
+
+.itms {
+  width: 240px !important;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+background: aqua;
+border: 2px solid  #ff0000;
+border-radius: 20px;
+
+}
+ 
+.title {
+}
+.fulltitle {
+  display: inline-block;
+
+  margin-top: 15px;
+
+}
+.Uncategorized {
+  display: inline-block;
+
+  margin-top: 15px;
+
+}
+.summary {
+  display: inline-block;
+  margin-top: 5px;
+}
+.imdb_id {
+
+}
+.imdb_raitng {
+}
+.runtime {
+}
+.language {
+}
+.ytid {
+}
