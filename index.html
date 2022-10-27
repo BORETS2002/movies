@@ -4,66 +4,77 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/main.css">
-  <link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-  rel="stylesheet"
-  integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-  crossorigin="anonymous"
-/>
-
-
-  <title>movies</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="main.css">
+  <title>91-dars</title>
 </head>
-<body class="body">
+<body class="bg-black">
+
   <div class="container">
-    <h1 class="mov">MovieS</h1>
-  
-<ul class="list row list-unstyled  mt-5">
+
+    <form class="form-control" autocomplete="off">
+
+      <label >
+        <input class="form-input" type="text" name="poisk" placeholder="poisk">
+
+      </label>
+<button type="submit">poisk</button>
+    </form>
+    <ul class="list list-unstyled row mt-5">
  
-</ul>
+    </ul>
+  </div>
 
+
+
+ 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <div class="modal-body row">
+        <div class="col-5">
+          <h2 class="modal-title"></h2>
+          <iframe class="modal-iframe" width="447" height="251" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="col-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex justify-content-between my-2">
+              <span class="modal-rating rating-icon d-inline-flex align-items-center"></span>
+              <span class="modal-year year-icon d-inline-flex align-items-center"></span>
+              <time class="modal-runtime time-icon d-inline-flex align-items-center  "></time>
+            </div>
+            <div class="modal-categories mb-2">
+            </div>
+              <p class="modal-summary"></p>
+          </div>
+            <a class="modal-imdb-link" href="" target="blank">Show on IMDb</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
-<template class="template">
-  <li class="itms col-12 col-sm-6 col-md-4 col-lg-3 "> 
-    <p>
-      Title:
-      <strong class="title text-danger"></strong>  
-     <br>
-      fulltitle:
-      <strong class="fulltitle"></strong>  
-      <br>
-      Categories:
-      <span class="Uncategorized"></span>
-     <br>
-     <!-- <hr>
 
-      summary:
-      <span class="summary"></span> -->
-      <hr>
-    </p>
-    <p>
-      imdb_id:
-      <span class=" imdb_id"></span>
-    <br>
-    imdb_raitng:
-    <span class="imdb_raitng"></span>
-    <br>
-    runtime:
-    <span class="runtime"></span>
-    <br>
-    language:
-    <span class="language"></span>
-    <br>
-    ytid:
-    <span class="ytid"></span>
-    
-    </p>
-    
-      </li>
-</template>
-
-<script src="/movies.js"></script>
-  <script src="/main.js"></script>
+  <template class="js-movie-template">
+    <li class="item col-3 mb-3">
+      <div class=" movie-box   p-3 d-flex flex-column justify-content-between">
+        <img class="movie-img mx-auto img-fluid" src="https://via.placeholder.com/150" alt="">
+        <h4 class="movie-title">Hjshs</h4>
+        <div class="d-flex justify-content-between my-2">
+          <span class="movie-rating rating-icon d-inline-flex align-items-center">2122</span>
+          <span class="movie-year year-icon d-inline-flex align-items-center">2010</span>
+          <time class="movie-runtime time-icon d-inline-flex align-items-center">200</time>
+        </div>
+        <div class="movie-categories mb-2">
+          hjhsijnksjcn, jsdhjs
+        </div>
+        <button class="movie-btn btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">More info</button>
+      </div>
+    </li>
+  </template>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="movies.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

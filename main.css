@@ -1,53 +1,45 @@
-.body{
-  background: #000;
-}
-.mov{
-  margin-top: 105px;
-text-align: center;
-color: #ff0000;
-}
-.list{
-}
+.movie-box{
+  min-height: 444px;
 
-.itms {
-  width: 240px !important;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 10px;
-  padding: 10px;
-background: aqua;
-border: 2px solid  #ff0000;
-border-radius: 20px;
-
-}
+  background-image: linear-gradient(to right top, #410000, #b80101, #c20a0a, #e0150e, #ffc2c2);
+  color: aliceblue;
  
-.title {
+border-radius: 20px;
+border: 2px solid rgb(59, 202, 2);
+}
+ .item{
+  min-height: 400px !important;
 
+ }
+.rating-icon::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url("./images/star.svg");
+  background-position: center;
+  background-size: 20px;
+  margin-right: 5px;
 }
-.fulltitle {
-  display: inline-block;
 
-  margin-top: 5px;
+.time-icon::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url("./images/time-fast.svg");
+  background-position: center;
+  background-size: 20px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
 
-}
-.Uncategorized {
-  display: inline-block;
+.year-icon::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url("./images/calendar-clock.svg");
+  background-position: center;
+  background-size: 20px;
+  margin-right: 5px;
+  margin-left: 5px;
 
-  margin-top: 15px;
-
-}
-.summary {
-  display: inline-block;
-  margin-top: 5px;
-}
-.imdb_id {
-
-}
-.imdb_raitng {
-}
-.runtime {
-}
-.language {
-}
-.ytid {
 }
