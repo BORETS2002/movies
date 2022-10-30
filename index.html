@@ -11,18 +11,31 @@
 <body class="bg-black">
 
   <div class="container">
+<h1 class="text-center text-danger mt-5">MOVIS</h1>
+<div class="d-flex align-items-center justify-content-between  mt-3 ">
 
-    <form class="form-control" autocomplete="off">
+  <form method="POST" class="form-control d-flex align-items-center p-1 w-25  d-inline-block" autocomplete="off">
+    
+    <label class="">
+      <input class="form-input border-danger text-danger" type="text" name="poisk" placeholder="search">
+      
+    </label>
+    <button class="btn  btn-search d-inline-block p-1 ms-auto " type="submit">search</button>
+  </form>
+  <form class="form-select-control width-25 d-inline-block" method="POST">
+    <select class="form-select" aria-label="Default select example" >
+      <option selected disabled>Films kategoriy</option>
+    </select>
+    
+  </form>
+</div>
 
-      <label >
-        <input class="form-input" type="text" name="poisk" placeholder="poisk">
 
-      </label>
-<button type="submit">poisk</button>
-    </form>
-    <ul class="list list-unstyled row mt-5">
- 
-    </ul>
+
+    <div class="list list-unstyled row mt-5">
+ <p class="text-danger text-center ">Loading...</p>
+
+    </div>
   </div>
 
 
@@ -57,7 +70,7 @@
 </div>
 
   <template class="js-movie-template">
-    <li class="item col-3 mb-3">
+    <div class="item col-3 mb-3">
       <div class=" movie-box   p-3 d-flex flex-column justify-content-between">
         <img class="movie-img mx-auto img-fluid" src="https://via.placeholder.com/150" alt="">
         <h4 class="movie-title">Hjshs</h4>
@@ -71,9 +84,10 @@
         </div>
         <button class="movie-btn btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">More info</button>
       </div>
-    </li>
+    </div>
   </template>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> -->
   <script src="movies.js"></script>
   <script src="main.js"></script>
 </body>

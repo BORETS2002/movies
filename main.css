@@ -11,6 +11,11 @@ border: 2px solid rgb(59, 202, 2);
   min-height: 400px !important;
 
  }
+ .btn-search{
+  border-radius:20px ;
+  background-image: linear-gradient(to right top, #410000, #b80101, #c20a0a, #e0150e, #ffc2c2);
+  color: aliceblue;
+ }
 .rating-icon::before {
   content: "";
   width: 20px;
