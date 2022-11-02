@@ -11,8 +11,12 @@ const modalCategories = elModal.querySelector(".modal-categories");
 const modalSummary = elModal.querySelector(".modal-summary");
 const modalLink = elModal.querySelector(".modal-imdb-link");
 const FormSelect = document.querySelector(".form-select-control");
-const SelectForm = document.querySelector(".form-select");
- 
+const SelectForm = document.querySelector(".js-Selekt");
+const elSortJs = document.querySelector(".js-Sort") 
+// console.log(elSort);
+
+// console.log(elSort.value);
+
 const qop = document.createDocumentFragment()
 
 
@@ -86,16 +90,63 @@ elList.addEventListener("click",(evt)=>{
 });
 
 
+
+// Sort
+
+
+function sortMovies (movies , sortType){
+  console.log(movies , sortType);
+  if (sortType === "A-Z" ){
+    movies.sort((a,b) => {
+      if( a.Title > b.Title ){
+        
+        return 1
+      } else if ( a.Title < b.Title ) {
+        return -1
+      } else{return 0}
+
+    })
+  }
+    if(sortType == "Z-A" ){
+    
+    movies.sort((a,b) => {
+      if( a.Title > b.Title ){
+        console.log(a.Title);
+        return -1
+      } else if ( a.Title < b.Title ) {
+        return 1
+      } else{return 0}
+      
+    })
+    }
+
+    if(sortType == 1-10 ){
+      return a - b
+    }
+
+}
+
+
+
 // search 
 EsearchForm.addEventListener("submit", (evt) => {
 evt.preventDefault()
+const elSort = elSortJs.value
+const selectValue = SelectForm.value.trim();
+
 const elFormSearchInput = elFormSearch.value.trim();
 const regexTitle = new RegExp (elFormSearchInput , "gi");
-const searchMovis = moviesArr.filter(itm => String(itm.Title).match(regexTitle));
-console.log(searchMovis);
+const searchMovis = moviesArr.filter(item => String(item.Title).match(regexTitle)  && item.Categories.match(selectValue) || SelectForm === "All"  ||  String(item.Title) ==""  );
+
+sortMovies(moviesArr , elSort)
+
+// console.log(sortMovies(searchMovis , elSort));
 if (searchMovis.length > 0){
   renderMovie(searchMovis, elList)
-}else{
+  
+  
+  
+} else{
   elList.innerHTML = "movie not found"
 }
 } )
@@ -128,3 +179,11 @@ selectQop.appendChild(Option)
 SelectForm.appendChild(selectQop)
 
 // Select end
+
+
+
+
+
+
+
+ 

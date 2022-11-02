@@ -20,13 +20,27 @@
       <input class="form-input border-danger text-danger" type="text" name="poisk" placeholder="search">
       
     </label>
-    <button class="btn  btn-search d-inline-block p-1 ms-auto " type="submit">search</button>
-  </form>
-  <form class="form-select-control width-25 d-inline-block" method="POST">
-    <select class="form-select" aria-label="Default select example" >
-      <option selected disabled>Films kategoriy</option>
-    </select>
-    
+    <button class="btn  btn-search d-inline-block p-1 ms-4  me-5" type="submit">search</button>
+    <div class="form-select-control     d-inline-block" method="POST">
+      <select class="form-select  js-Selekt " aria-label="Default select example" >
+        <option selected value="All" > All</option>
+      </select>
+    </div>
+    <div class="form-select-sort  ms-3   d-inline-block" method="POST">
+      <select class="form-select js-Sort " aria-label="Default select example" >
+        <option   value="sort" > Sort</option>
+        <option    value="A-Z" > A-Z </option>
+        <option   value="Z-A" >Z-A</option>
+        <option   value="1-10" >1-10</option>
+        <option   value="10-1" >10-1</option>
+
+        <option   value="2000-20018" >2000-2018</option>
+        <option   value="2018-2000" >2018-2000</option>
+
+
+
+      </select>
+    </div>
   </form>
 </div>
 

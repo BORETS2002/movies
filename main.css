@@ -48,3 +48,7 @@ border: 2px solid rgb(59, 202, 2);
   margin-left: 5px;
 
 }
+.form-select{
+
+  width: 190px !important;
+}
