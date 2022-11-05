@@ -10,20 +10,21 @@ const modalRuntime = elModal.querySelector(".modal-runtime");
 const modalCategories = elModal.querySelector(".modal-categories");
 const modalSummary = elModal.querySelector(".modal-summary");
 const modalLink = elModal.querySelector(".modal-imdb-link");
-const FormSelect = document.querySelector(".form-select-control");
+// const FormSelect = document.querySelector(".form-select-control");
 const SelectForm = document.querySelector(".js-Selekt");
 const elSortJs = document.querySelector(".js-Sort") 
-// console.log(elSort);
-
-// console.log(elSort.value);
+ 
+const StartY = document.querySelector(".startY")
+const endY = document.querySelector(".endY")
+ 
+const EsearchForm  = document.querySelector(".form-js");
+const elFormSearch  = EsearchForm.querySelector(".search-js");
 
 const qop = document.createDocumentFragment()
 
 
 const moviesArr = movies.splice(0, 100);
 
-const EsearchForm  = document.querySelector(".form-control");
-const elFormSearch  = EsearchForm.querySelector(".form-input");
 
 
 function OPtime (time){
@@ -77,8 +78,7 @@ elList.addEventListener("click",(evt)=>{
       console.log( typeof item.imdb_id );
       return item.imdb_id == btnId
     } );
-    console.log(typeof btnId );
-    console.log(  foundMovie );
+   
     renderModalInfo(foundMovie);
 
 
@@ -88,69 +88,6 @@ elList.addEventListener("click",(evt)=>{
     modalIframe.src = "";
   })
 });
-
-
-
-// Sort
-
-
-function sortMovies (movies , sortType){
-  console.log(movies , sortType);
-  if (sortType === "A-Z" ){
-    movies.sort((a,b) => {
-      if( a.Title > b.Title ){
-        
-        return 1
-      } else if ( a.Title < b.Title ) {
-        return -1
-      } else{return 0}
-
-    })
-  }
-    if(sortType == "Z-A" ){
-    
-    movies.sort((a,b) => {
-      if( a.Title > b.Title ){
-        console.log(a.Title);
-        return -1
-      } else if ( a.Title < b.Title ) {
-        return 1
-      } else{return 0}
-      
-    })
-    }
-
-    if(sortType == 1-10 ){
-      return a - b
-    }
-
-}
-
-
-
-// search 
-EsearchForm.addEventListener("submit", (evt) => {
-evt.preventDefault()
-const elSort = elSortJs.value
-const selectValue = SelectForm.value.trim();
-
-const elFormSearchInput = elFormSearch.value.trim();
-const regexTitle = new RegExp (elFormSearchInput , "gi");
-const searchMovis = moviesArr.filter(item => String(item.Title).match(regexTitle)  && item.Categories.match(selectValue) || SelectForm === "All"  ||  String(item.Title) ==""  );
-
-sortMovies(moviesArr , elSort)
-
-// console.log(sortMovies(searchMovis , elSort));
-if (searchMovis.length > 0){
-  renderMovie(searchMovis, elList)
-  
-  
-  
-} else{
-  elList.innerHTML = "movie not found"
-}
-} )
-// search end 
 
 
 
@@ -170,8 +107,6 @@ movies.forEach(itm => {
 const selectQop = new DocumentFragment()
 geners.forEach(item => {
   const Option = document.createElement("option");
- 
-
 Option.value =item;
 Option.textContent = item;
 selectQop.appendChild(Option)
@@ -182,6 +117,98 @@ SelectForm.appendChild(selectQop)
 
 
 
+// Sort
+
+
+function sortMovies (movies , sortType){
+  
+  if (sortType === "A-Z" ){
+    movies.sort((a, b) => {
+      if(String(a.Title).toUpperCase() > String (b.Title).toUpperCase()  ){
+        return 1
+      } else if ( String(a.Title).toUpperCase()  < String (b.Title).toUpperCase() ) {
+        return -1
+      } else{return 0}
+
+    })
+  }
+
+  if (sortType === "Z-A" ){
+    movies.sort((a, b) => {
+      if( a.Title < b.Title ){
+        return 1
+      } else if ( a.Title > b.Title ) {
+        return -1
+      } else{return 0}
+
+    })
+  }
+  
+  
+
+    if(sortType == 1-10 ){
+      movies.sort((a, b) => {
+      return a.imdb_rating - b.imdb_rating
+    })
+  }
+  movies.sort((a, b) => {
+    return b.imdb_rating - a.imdb_rating
+  })
+}
+
+
+// search 
+EsearchForm.addEventListener("submit", (evt) => {
+  evt.preventDefault()
+  const searchValue = elFormSearch.value
+  const Regex = new RegExp (searchValue , "gi");
+  
+  const moviFilter = moviesArr.filter( function (item){  
+    return String(item.Title).match(Regex) && (SelectForm.value == "All" || SelectForm.value == item.Categories) && ( StartY.value == "" || item.movie_year >= StartY.value ) && (endY.value == "" || item.movie_year <= endY.value )
+  })
+
+if ( moviFilter.length > 0 ) {
+  sortMovies(moviFilter , elSortJs.value) 
+  renderMovie(moviFilter , elList )
+  
+  
+}
+
+// const elSort = elSortJs.value
+// const selectValue = SelectForm.value;
+// //
+// const startInputValue = Number(StartY.value.trim())
+// const endInputValue = Number( endY.value.trim());
+// //
+ 
+// const elFormSearchInput = elFormSearch.value.trim();
+// const regexTitle = new RegExp (elFormSearchInput , "gi");
+ 
+ 
+ 
+// const searchMovis = moviesArr.filter(item => {
+
+// return String(item.Title).match(regexTitle) && (selectValue == "All" || item.Categories.includes(selectValue))
+
+// // && (startInputValue == ""  || item.movie_year >= startInputValue)  && (endInputValue == "" || item.movie_year <= endInputValue )
+
+// })
+
+// console.log(searchMovis  );
+
+// sortMovies(searchMovis , elSort)
+ 
+// if (searchMovis.length > 0){
+//   renderMovie(moviesArr, elList);
+//   // console.log(renderMovie(searchMovis, elList));
+// } else{
+//   elList.innerHTML = "movie not found"
+// }
+} )
+// search end 
+ 
+
+ 
 
 
 

@@ -14,33 +14,36 @@
 <h1 class="text-center text-danger mt-5">MOVIS</h1>
 <div class="d-flex align-items-center justify-content-between  mt-3 ">
 
-  <form method="POST" class="form-control d-flex align-items-center p-1 w-25  d-inline-block" autocomplete="off">
+  <form method="POST" class="form-control form-js d-flex align-items-center p-1   d-inline-block" autocomplete="off">
     
     <label class="">
-      <input class="form-input border-danger text-danger" type="text" name="poisk" placeholder="search">
+      <input class="form-input search-js border-danger text-danger ms-3 me-2" type="text" name="poisk" placeholder="search">
       
     </label>
-    <button class="btn  btn-search d-inline-block p-1 ms-4  me-5" type="submit">search</button>
+ 
+    <div class="d-flex">
+      <input class="startY  me-2 border-danger" type="number" placeholder="start Year">
+      <input class="endY border-danger me-2" type="number" placeholder="end Year">
+          </div>
+
     <div class="form-select-control     d-inline-block" method="POST">
-      <select class="form-select  js-Selekt " aria-label="Default select example" >
+      <select class="form-select  js-Selekt border-danger   " aria-label="Default select example" >
         <option selected value="All" > All</option>
       </select>
     </div>
-    <div class="form-select-sort  ms-3   d-inline-block" method="POST">
-      <select class="form-select js-Sort " aria-label="Default select example" >
+    <div class="form-select-sort  ms-2   d-inline-block" method="POST">
+      <select class="form-select js-Sort border-danger " aria-label="Default select example" >
         <option   value="sort" > Sort</option>
         <option    value="A-Z" > A-Z </option>
         <option   value="Z-A" >Z-A</option>
         <option   value="1-10" >1-10</option>
         <option   value="10-1" >10-1</option>
-
-        <option   value="2000-20018" >2000-2018</option>
-        <option   value="2018-2000" >2018-2000</option>
-
-
-
+ 
       </select>
     </div>
+
+
+    <button class="btn  btn-search d-inline-block p-1 ms-4  " type="submit">search</button>
   </form>
 </div>
 
@@ -87,7 +90,7 @@
     <div class="item col-3 mb-3">
       <div class=" movie-box   p-3 d-flex flex-column justify-content-between">
         <img class="movie-img mx-auto img-fluid" src="https://via.placeholder.com/150" alt="">
-        <h4 class="movie-title">Hjshs</h4>
+        <h4 class="movie-title"> </h4>
         <div class="d-flex justify-content-between my-2">
           <span class="movie-rating rating-icon d-inline-flex align-items-center">2122</span>
           <span class="movie-year year-icon d-inline-flex align-items-center">2010</span>
